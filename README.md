@@ -1,20 +1,76 @@
-# -service-now-urgent-incident-notification-workflow
-Technologies Used
+# 🚨 ServiceNow Urgent Incident Notification Workflow
 
--ServiceNow Yokohama Release Instance
+---
 
--Draw.io
+## 🛠️ Technologies Used
 
-System Overview: In this case the scenario posed was with a fictional transportation app company that had a malfunctioning workflow in place with notifications that were not fixed properly. The company is known for thier reliable network infrastructure which is critical for maintaining ride-hailing services across hundreds of cities worldwide. The past month a critical network outage in a major city data center went unnoticed for 2 hours because the notification system wasn't working properly, causing widespread service disruptions and affecting thousands of riders and drivers. The incident resulted in significant revenue loss and regulatory scrutiny. The ficitious manager discovered that critical network incidents aren't triggering email notifications to the Network Operations team. Yesterday, someone created a Critical priority incident for a network outage, but no notifications were sent to the team. The system was supposed to automatically alert engineers within minutes of a critical incident being created. The ask is fix the system so that urgent network incidents trigger immediate email notifications to IT engineers, preventing SLA breaches. Your Role: As a junior ServiceNow admin on the IT Operations team, you've been tasked with fixing a critical gap in the incident management system that supports Uber's network infrastructure.
+- **ServiceNow Personal Developer Instance (PDI) - Yokohama Release**
+- **Draw.io** (for architecture diagramming)
 
-Implementation Steps: Navigating this from the lens of junior ServiceNow admin on the IT Operations team this is how went about fixing a critical gap in the incident managment system. First I identified what was missing from the existing triggger based off the scenario presented. I noticed that there that trigger selection was correct as well as the table however the conditions was where I identified the bottleneck. I removed the exisiting conditions and replaced them with Priority is Critical and Assignment group is Networking Operations. I also amended the action record to ensure the HTML had more details such as a having a targeted title so the network operations group members can recognize immediately the type of ticket it is, as well as making sure the email contains the ticket number and a description of the problem that the user is facing.
+---
 
-Architecture Diagram: Visual representation of the complete system flow via draw.io
-<img width="1704" height="694" alt="image" src="https://github.com/user-attachments/assets/f160aa56-618a-4229-b2c6-aa03cf96d5a0" />
+## 🏢 System Overview
 
-Hypothetical AI Scenario: Your company operates globally across multiple time zones. Critical incidents often occur outside business hours when senior engineers aren't available. The current escalation process follows a rigid hierarchy that doesn't account for engineer expertise, current availability, or incident complexity, leading to prolonged resolution times.
-Explain how AI agents could enhance incident routing (100-150 words)
+A fictional transportation app company—renowned for its reliable network infrastructure, supporting ride-hailing services across hundreds of cities worldwide—recently faced a major service disruption. Due to a malfunctioning notification workflow, a critical network outage in a major city data center went unnoticed for 2 hours, causing widespread disruption and loss.
 
-Considering this company is global means that ideally there is 24/7, 365 days availability of a resource providing solutions. The foundational elements of AI Agent being able to enhance incident routing is to have access to employee schedules, work times, mean time to resolution for incidents, microsoft teams status, and performance reviews. Then the Agent should filter all elements by geographical region and create a rating system for top performers from all regions with the quickest resolutions times. When an incident is submitted within standard business hours in the users region the Agent will route it to the highest, quickest, and most available via teams status employee based of the rating system and continue down this cadence until an resource is identified to work on the incident. If the incident is submitted outside of standard business hours in the users region it will automatically route to the closest region where business hours are still open and follow the same logic as mentioned prior. Lastly once an incident is assigned by the Agent it will automatically change the microsoft team status of the resource with a tag of busy with incident. In closing overtime the agent will build be able to utilize muscle memory from analyzing the daily tracking of historical patterns by region for continuos improvement.
+**Incident Details:**
+- ❗ Critical network outage was not flagged due to failed notifications.
+- 💸 Resulted in significant revenue loss and regulatory scrutiny.
+- 🕒 A Critical priority incident was created, but no email notifications were sent to the Network Operations team.
+- ⚠️ The system was expected to alert engineers within minutes of such incidents.
 
+**Project Objective:**  
+Fix the system so that urgent network incidents trigger immediate email notifications to IT engineers, preventing SLA breaches.
 
+---
+
+## 👩‍💻 Your Role
+
+As a **junior ServiceNow admin** on the IT Operations team, you are tasked with closing a critical gap in the incident management system that supports the network infrastructure.
+
+---
+
+## 📝 Implementation Steps
+
+1. **Identified Gaps**
+   - Analyzed the scenario and the existing notification trigger.
+   - Verified correct trigger and table selection.
+   - Discovered bottleneck in the notification conditions.
+
+2. **Refined Notification Conditions**
+   - Removed outdated conditions.
+   - Added:  
+     - `Priority is Critical`  
+     - `Assignment group is Networking Operations`
+
+3. **Enhanced Notification Content**
+   - Updated the action record to ensure email notifications include:
+     - 🎯 Targeted, descriptive titles
+     - 📝 Ticket number and detailed description of the issue
+
+---
+
+## 🗺️ Architecture Diagram
+
+Visual representation of the complete system flow (created in Draw.io):
+
+<img width="1704" height="694" alt="System Architecture Diagram" src="https://github.com/user-attachments/assets/f160aa56-618a-4229-b2c6-aa03cf96d5a0" />
+
+---
+
+## 🤖 Hypothetical AI Enhancement Scenario
+
+Your company operates globally across multiple time zones. Critical incidents often occur outside business hours when senior engineers aren't available. The current escalation process follows a rigid hierarchy that doesn't account for engineer expertise, current availability, or incident complexity, leading to prolonged resolution times.
+
+**How AI Agents Could Enhance Incident Routing:**  
+Given the global nature of this company, there should ideally be 24/7, 365-day availability of resources to provide solutions. For AI agents to truly enhance incident routing, they must have access to key data points such as employee schedules, work hours, mean time to resolution, Microsoft Teams status, and performance reviews. The agent would then filter these elements by geographic region and create a rating system to identify top performers with the fastest resolution times across all regions.
+
+When an incident is submitted during standard business hours in a user’s region, the AI agent would route it to the highest-rated, most available employee—determined by Teams status—according to the rating system, and continue this process until an appropriate resource is found. If the incident arises outside of standard business hours, it would automatically be routed to the closest region where business hours are active, applying the same logic.
+
+Once the agent assigns an incident, it would automatically update the Microsoft Teams status of the selected employee with a “busy with incident” tag. Over time, the agent would leverage historical regional data and daily tracking to build a kind of “muscle memory,” continually improving its routing decisions.
+
+---
+
+## 📬 Contact
+
+For questions or contributions, please open an issue or contact [@Edana87](https://github.com/Edana87).
